@@ -5,6 +5,8 @@ date = input("원하는 날짜를 입력하시오.").split()
 
 if len(date[0]) == 1:
     date[0] = "0" + date[0]
+if len(date[1]) == 1:
+    date[1] = "0" + date[1]
 
 url = 'http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=01&theatercode=0013&date=2021'
 

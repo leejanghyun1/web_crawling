@@ -1,7 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = 'http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=01&theatercode=0013&date=20210228'
+date = input("원하는 날짜를 입력하시오.").split()
+
+if len(date[0]) == 1:
+    date[0] = "0" + date[0]
+
+url = 'http://www.cgv.co.kr/common/showtimes/iframeTheater.aspx?areacode=01&theatercode=0013&date=2021'
+
+url = url + date[0] + date[1]
+
 html = requests.get(url)
 soup = BeautifulSoup(html.text, 'html.parser')
 imax_list = soup.select('span.imax')

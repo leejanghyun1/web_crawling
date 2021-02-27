@@ -20,6 +20,7 @@ html = requests.get(url)
 soup = BeautifulSoup(html.text, 'html.parser')
 imax_list = soup.select('span.imax')
 forDX_list = soup.select('span.forDX')
+
 csv = []
 # imax 열린 제목들 나열
 print(month + "월 " + day + "일에는")
